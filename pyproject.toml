@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "algotrading"
+version = "0.1.0"
+description = "An example Python project using Starlite"
+authors = ["Phil Labrum <philip.labrum@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+starlite = "^1.47.1"  # Add Starlite dependency
+
+[tool.poetry.dev-dependencies]
+pylint = "^2.16"
+black = "^23.0"
+isort = "^5.12"
+mypy = "^0.990"
+pytest = "^7.0"
+uvicorn = "^0.22.0"          # Add uvicorn for running the app
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+# Black configuration
+[tool.black]
+line-length = 88
+target-version = ['py39']
+
+# isort configuration
+[tool.isort]
+profile = "black"
+
+# mypy configuration
+[tool.mypy]
+strict = true
+files = ["my_project"]
+
+# pylint configuration
+[tool.pylint."MESSAGES CONTROL"]
+disable = ["C0114", "C0116"]  # Disable docstring warnings for example
